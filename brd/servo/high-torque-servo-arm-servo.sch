@@ -1,0 +1,413 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:74xgxx
+LIBS:high-torque-servo-arm-servo-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "High Torque Servo Arm: Servo"
+Date "2019-12-05"
+Rev "release-v0.1A"
+Comp "EX arte electrónico y experimental"
+Comment1 ""
+Comment2 "Revised by: R. García"
+Comment3 "Drawn by: R. García"
+Comment4 "Designed by: R. García"
+$EndDescr
+$Comp
+L Screw_Terminal_01x03 J1
+U 1 1 5DDD70CC
+P 3350 3550
+F 0 "J1" H 3350 3350 50  0000 C CNN
+F 1 "INPUT" H 3350 3750 50  0000 C CNN
+F 2 "1758021:1758021" H 3350 3550 50  0001 C CNN
+F 3 "lib/datasheets/1758021.pdf" H 3350 3550 50  0001 C CNN
+F 4 "Phoenix Contact" H 3350 3550 60  0001 C CNN "Manufacturer"
+F 5 "1758021" H 3350 3550 60  0001 C CNN "Manufacturer Part Number"
+F 6 "1792252" H 3350 3550 60  0001 C CNN "Use w/"
+	1    3350 3550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Conn_01x03 J2
+U 1 1 5DDD70FB
+P 8450 3550
+F 0 "J2" H 8450 3350 50  0000 C CNN
+F 1 "SERVO" H 8450 3750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x03_Pitch2.54mm" H 8450 3550 50  0001 C CNN
+F 3 "lib/datasheets/22289034.pdf" H 8450 3550 50  0001 C CNN
+F 4 "Molex" H 8450 3550 60  0001 C CNN "Manufacturer"
+F 5 "22-28-9034" H 8450 3550 60  0001 C CNN "Manufacturer Part Number"
+	1    8450 3550
+	1    0    0    1   
+$EndComp
+$Comp
+L Fuse F1
+U 1 1 5DDD7140
+P 5450 3250
+F 0 "F1" V 5350 3250 50  0000 C CNN
+F 1 "10A" V 5550 3250 50  0000 C CNN
+F 2 "3557:3557" V 5380 3250 50  0001 C CNN
+F 3 "lib/datasheets/3557-10.pdf" H 5450 3250 50  0001 C CNN
+F 4 "Keystone Electronics" V 5450 3250 60  0001 C CNN "Manufacturer"
+F 5 "3557-10" V 5450 3250 60  0001 C CNN "Manufacturer Part Number"
+F 6 "0287010.PXCN" V 5450 3250 60  0001 C CNN "Use w/"
+	1    5450 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L L78L05_SO8 U1
+U 1 1 5DDD71D8
+P 6250 3600
+F 0 "U1" H 6100 3725 50  0000 C CNN
+F 1 "L78L05_SO8" H 6250 3725 50  0000 L CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 6350 3800 50  0001 C CIN
+F 3 "lib/datasheets/L78L.pdf" H 6450 3600 50  0001 C CNN
+F 4 "ST Microelectronics" H 6250 3600 60  0001 C CNN "Manufacturer"
+F 5 "L78L05ABD13TR" H 6250 3600 60  0001 C CNN "Manufacturer Part Number"
+	1    6250 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D2
+U 1 1 5DDD720F
+P 4900 4400
+F 0 "D2" V 5000 4300 50  0000 C CNN
+F 1 "RED" H 4900 4500 50  0000 C CNN
+F 2 "LEDs:LED_0805" H 4900 4400 50  0001 C CNN
+F 3 "lib/datasheets/AP2012SRCPRV.pdf" H 4900 4400 50  0001 C CNN
+F 4 "Kingbright" V 4900 4400 60  0001 C CNN "Manufacturer"
+F 5 "AP2012SRCPRV" V 4900 4400 60  0001 C CNN "Manufacturer Part Number"
+	1    4900 4400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R2
+U 1 1 5DDD7288
+P 4900 4000
+F 0 "R2" H 5000 4150 50  0000 C CNN
+F 1 "330R" V 4900 4000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4830 4000 50  0001 C CNN
+F 3 "" H 4900 4000 50  0001 C CNN
+F 4 "Bourns" H 4900 4000 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-331ELF" H 4900 4000 60  0001 C CNN "Manufacturer Part Number"
+	1    4900 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 5DDD72B1
+P 6650 4000
+F 0 "C2" H 6675 4100 50  0000 L CNN
+F 1 "100nF" H 6675 3900 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6688 3850 50  0001 C CNN
+F 3 "" H 6650 4000 50  0001 C CNN
+F 4 "Kemet" H 6650 4000 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 6650 4000 60  0001 C CNN "Manufacturer Part Number"
+	1    6650 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LVC1G17 U2
+U 1 1 5DDD74F4
+P 7500 4000
+F 0 "U2" H 7400 4150 50  0000 C CNN
+F 1 "74LVC1G17" H 7500 3850 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23-5" H 7500 4000 50  0001 C CNN
+F 3 "lib/datasheets/SN74LVC1G17.pdf" H 7500 4000 50  0001 C CNN
+F 4 "Texas Instruments" H 7500 4000 60  0001 C CNN "Manufacturer"
+F 5 "SN74LVC1G17DBVR" H 7500 4000 60  0001 C CNN "Manufacturer Part Number"
+	1    7500 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C1
+U 1 1 5DDD7585
+P 4500 3550
+F 0 "C1" H 4525 3650 50  0000 L CNN
+F 1 "100µF" H 4525 3450 50  0000 L CNN
+F 2 "Capacitors_SMD:CP_Elec_6.3x7.7" H 4538 3400 50  0001 C CNN
+F 3 "" H 4500 3550 50  0001 C CNN
+F 4 "Panasonic" H 4500 3550 60  0001 C CNN "Manufacturer"
+F 5 "EEE-HC1C101XP" H 4500 3550 60  0001 C CNN "Manufacturer Part Number"
+	1    4500 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L BC857 Q1
+U 1 1 5DDD7656
+P 5000 3600
+F 0 "Q1" H 4850 3500 50  0000 L CNN
+F 1 "BC857" H 4700 3700 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 5200 3525 50  0001 L CIN
+F 3 "lib/datasheets/BC857.pdf" H 5000 3600 50  0001 L CNN
+F 4 "ON Semiconductor" H 5000 3600 60  0001 C CNN "Manufacturer"
+F 5 "BC857CLT1G" H 5000 3600 60  0001 C CNN "Manufacturer Part Number"
+	1    5000 3600
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 5DDD7891
+P 3700 3800
+F 0 "#PWR01" H 3700 3550 50  0001 C CNN
+F 1 "GND" H 3700 3650 50  0000 C CNN
+F 2 "" H 3700 3800 50  0001 C CNN
+F 3 "" H 3700 3800 50  0001 C CNN
+	1    3700 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 3650 3700 3650
+Wire Wire Line
+	3700 3650 3700 3800
+$Comp
+L GND #PWR02
+U 1 1 5DDD7A25
+P 4500 3800
+F 0 "#PWR02" H 4500 3550 50  0001 C CNN
+F 1 "GND" H 4500 3650 50  0000 C CNN
+F 2 "" H 4500 3800 50  0001 C CNN
+F 3 "" H 4500 3800 50  0001 C CNN
+	1    4500 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 3800 4500 3700
+Wire Wire Line
+	4500 3400 4500 3250
+Wire Wire Line
+	3700 3250 5300 3250
+Wire Wire Line
+	3700 3250 3700 3450
+Wire Wire Line
+	3700 3450 3550 3450
+$Comp
+L GND #PWR03
+U 1 1 5DDD7AB8
+P 7500 4250
+F 0 "#PWR03" H 7500 4000 50  0001 C CNN
+F 1 "GND" H 7500 4100 50  0000 C CNN
+F 2 "" H 7500 4250 50  0001 C CNN
+F 3 "" H 7500 4250 50  0001 C CNN
+	1    7500 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 4250 7500 4100
+Wire Wire Line
+	4900 3250 4900 3400
+Connection ~ 4500 3250
+$Comp
+L R R3
+U 1 1 5DDD8B50
+P 5450 3600
+F 0 "R3" V 5400 3800 50  0000 C CNN
+F 1 "4k7" V 5450 3600 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5380 3600 50  0001 C CNN
+F 3 "" H 5450 3600 50  0001 C CNN
+F 4 "Bourns" V 5450 3600 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-472ELF" V 5450 3600 60  0001 C CNN "Manufacturer Part Number"
+	1    5450 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 5DDD8C23
+P 5750 4000
+F 0 "R4" H 5850 4150 50  0000 C CNN
+F 1 "10k" V 5750 4000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5680 4000 50  0001 C CNN
+F 3 "" H 5750 4000 50  0001 C CNN
+F 4 "Bourns" H 5750 4000 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-103ELF" H 5750 4000 60  0001 C CNN "Manufacturer Part Number"
+	1    5750 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3800 4900 3850
+Wire Wire Line
+	4900 4150 4900 4250
+Wire Wire Line
+	5200 3600 5300 3600
+Wire Wire Line
+	5600 3600 5950 3600
+Wire Wire Line
+	5750 3250 5750 3850
+Connection ~ 4900 3250
+$Comp
+L GND #PWR04
+U 1 1 5DDD8E08
+P 4900 4650
+F 0 "#PWR04" H 4900 4400 50  0001 C CNN
+F 1 "GND" H 4900 4500 50  0000 C CNN
+F 2 "" H 4900 4650 50  0001 C CNN
+F 3 "" H 4900 4650 50  0001 C CNN
+	1    4900 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 5DDD8E37
+P 5750 4250
+F 0 "#PWR05" H 5750 4000 50  0001 C CNN
+F 1 "GND" H 5750 4100 50  0000 C CNN
+F 2 "" H 5750 4250 50  0001 C CNN
+F 3 "" H 5750 4250 50  0001 C CNN
+	1    5750 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 4550 4900 4650
+Wire Wire Line
+	5750 4250 5750 4150
+Wire Wire Line
+	5600 3250 8100 3250
+Connection ~ 5750 3600
+$Comp
+L GND #PWR06
+U 1 1 5DDD9079
+P 6250 4000
+F 0 "#PWR06" H 6250 3750 50  0001 C CNN
+F 1 "GND" H 6250 3850 50  0000 C CNN
+F 2 "" H 6250 4000 50  0001 C CNN
+F 3 "" H 6250 4000 50  0001 C CNN
+	1    6250 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D1
+U 1 1 5DDD94B6
+P 4150 3950
+F 0 "D1" V 4250 3850 50  0000 C CNN
+F 1 "GREEN" H 4150 4050 50  0000 C CNN
+F 2 "LEDs:LED_0805" H 4150 3950 50  0001 C CNN
+F 3 "lib/datasheets/LG-R971.pdf" H 4150 3950 50  0001 C CNN
+F 4 "Osram" V 4150 3950 60  0001 C CNN "Manufacturer"
+F 5 "LG R971-KN-1" V 4150 3950 60  0001 C CNN "Manufacturer Part Number"
+	1    4150 3950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R1
+U 1 1 5DDD94BC
+P 4150 3550
+F 0 "R1" H 4250 3700 50  0000 C CNN
+F 1 "470R" V 4150 3550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4080 3550 50  0001 C CNN
+F 3 "" H 4150 3550 50  0001 C CNN
+F 4 "Bourns" H 4150 3550 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-471ELF" H 4150 3550 60  0001 C CNN "Manufacturer Part Number"
+	1    4150 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 3700 4150 3800
+$Comp
+L GND #PWR07
+U 1 1 5DDD94C3
+P 4150 4200
+F 0 "#PWR07" H 4150 3950 50  0001 C CNN
+F 1 "GND" H 4150 4050 50  0000 C CNN
+F 2 "" H 4150 4200 50  0001 C CNN
+F 3 "" H 4150 4200 50  0001 C CNN
+	1    4150 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 4100 4150 4200
+Wire Wire Line
+	4150 3400 4150 3250
+Connection ~ 4150 3250
+Wire Wire Line
+	6250 3900 6250 4000
+Wire Wire Line
+	6550 3600 7500 3600
+Wire Wire Line
+	6650 3600 6650 3850
+$Comp
+L GND #PWR08
+U 1 1 5DDD7C46
+P 6650 4250
+F 0 "#PWR08" H 6650 4000 50  0001 C CNN
+F 1 "GND" H 6650 4100 50  0000 C CNN
+F 2 "" H 6650 4250 50  0001 C CNN
+F 3 "" H 6650 4250 50  0001 C CNN
+	1    6650 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 4250 6650 4150
+Wire Wire Line
+	7500 3600 7500 3900
+Connection ~ 6650 3600
+Wire Wire Line
+	3550 3550 3850 3550
+Wire Wire Line
+	3850 3550 3850 4950
+Wire Wire Line
+	3850 4950 7050 4950
+Wire Wire Line
+	7050 4950 7050 4000
+Wire Wire Line
+	7050 4000 7200 4000
+$Comp
+L GND #PWR09
+U 1 1 5DDD8D82
+P 8100 3800
+F 0 "#PWR09" H 8100 3550 50  0001 C CNN
+F 1 "GND" H 8100 3650 50  0000 C CNN
+F 2 "" H 8100 3800 50  0001 C CNN
+F 3 "" H 8100 3800 50  0001 C CNN
+	1    8100 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 3800 8100 3650
+Wire Wire Line
+	8100 3650 8250 3650
+Wire Wire Line
+	8250 3550 8100 3550
+Wire Wire Line
+	8100 3550 8100 3250
+Connection ~ 5750 3250
+Wire Wire Line
+	7750 4000 7900 4000
+Wire Wire Line
+	7900 4000 7900 3450
+Wire Wire Line
+	7900 3450 8250 3450
+$EndSCHEMATC
