@@ -1,0 +1,8 @@
+(fp_lib_table
+  (lib (name 3557)(type KiCad)(uri "$(KIPRJMOD)/lib/3557.pretty")(options "")(descr ""))
+  (lib (name logo-ex)(type KiCad)(uri "$(KIPRJMOD)/lib/logo-ex.pretty")(options "")(descr ""))
+  (lib (name 61201422021)(type KiCad)(uri "$(KIPRJMOD)/lib/61201422021.pretty")(options "")(descr ""))
+  (lib (name 4DB-P108-04)(type KiCad)(uri "$(KIPRJMOD)/lib/4DB-P108-04.pretty")(options "")(descr ""))
+  (lib (name 1762075)(type KiCad)(uri "$(KIPRJMOD)/lib/1762075.pretty")(options "")(descr ""))
+  (lib (name 1759020)(type KiCad)(uri "$(KIPRJMOD)/lib/1759020.pretty")(options "")(descr ""))
+)
