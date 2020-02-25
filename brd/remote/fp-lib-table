@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name RS08U111Z001)(type KiCad)(uri "$(KIPRJMOD)/lib/RS08U111Z001.pretty")(options "")(descr ""))
+  (lib (name 311110005)(type KiCad)(uri "$(KIPRJMOD)/lib/311110005.pretty")(options "")(descr ""))
+  (lib (name logo-ex)(type KiCad)(uri "$(KIPRJMOD)/lib/logo-ex.pretty")(options "")(descr ""))
+)
