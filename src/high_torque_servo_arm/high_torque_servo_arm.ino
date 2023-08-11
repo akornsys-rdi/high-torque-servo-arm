@@ -27,11 +27,15 @@
 #define SHOULDER_X_ADC_CH 2
 #define SHOULDER_Y_ADC_CH 3
 
-
 // I²C ADDRESSES
 #define MAIN_EXPANDER 0x38
 #define REMOTE_EXPANDER 0x3F
 #define REMOTE_ADC 0x48
+
+// TRAVEL RANGE
+#define MIN_SERVO 580
+#define HOME_SERVO 1530
+#define MAX_SERVO 2400
 
 Servo thumb;
 Servo index;
@@ -71,8 +75,8 @@ void setup() {
     wrist.attach(WRIST_PIN);
     aux1.attach(AUX1_PIN);
     aux2.attach(AUX2_PIN);
-    shoulder_x2.writeMicroseconds(1530);
-    shoulder_y.writeMicroseconds(1530);
+    shoulder_x2.writeMicroseconds(HOME_SERVO);
+    shoulder_y.writeMicroseconds(HOME_SERVO);
 }
 
 void loop() {
@@ -80,9 +84,9 @@ void loop() {
     char shoulder_y_step = 0;
     unsigned int joy_shoulder_x = 0;
     unsigned int joy_shoulder_y = 0;
-    static unsigned int shoulder_x_pos = 1530;
-    static unsigned int shoulder_y_pos = 1530;
-    
+    static unsigned int shoulder_x_pos = HOME_SERVO;
+    static unsigned int shoulder_y_pos = HOME_SERVO;
+
     joy_shoulder_x = remote_adc.readADC_SingleEnded(SHOULDER_X_ADC_CH);
     joy_shoulder_y = remote_adc.readADC_SingleEnded(SHOULDER_Y_ADC_CH);
     if ((joy_shoulder_x > 934) && (joy_shoulder_x < 1456)) {
@@ -99,27 +103,29 @@ void loop() {
     }
     else shoulder_x_step = 0;
     if ((joy_shoulder_y > 934) && (joy_shoulder_y < 1456)) {
-        shoulder_y_step = 10;
-    }
-    else if (joy_shoulder_y > 1456) {
-        shoulder_y_step = 50;
-    }
-    else if ((joy_shoulder_y > 202) && (joy_shoulder_y < 734)) {
         shoulder_y_step = -10;
     }
-    else if (joy_shoulder_y < 202) {
+    else if (joy_shoulder_y > 1456) {
         shoulder_y_step = -50;
+    }
+    else if ((joy_shoulder_y > 202) && (joy_shoulder_y < 734)) {
+        shoulder_y_step = 10;
+    }
+    else if (joy_shoulder_y < 202) {
+        shoulder_y_step = 50;
     }
     else shoulder_y_step = 0;
 
-    //1530 center
     shoulder_x_pos += shoulder_x_step;
-    shoulder_x_pos = constrain(shoulder_x_pos, 580, 2400);
+    shoulder_x_pos = constrain(shoulder_x_pos, MIN_SERVO, MAX_SERVO);
     shoulder_x2.writeMicroseconds(shoulder_x_pos);
     shoulder_y_pos += shoulder_y_step;
-    shoulder_y_pos = constrain(shoulder_y_pos, 580, 2400);
+    shoulder_y_pos = constrain(shoulder_y_pos, MIN_SERVO, MAX_SERVO);
     shoulder_y.writeMicroseconds(shoulder_y_pos);
     //aux1.writeMicroseconds(shoulder_y_pos);
+    Serial.print("X: ");
+    Serial.print(shoulder_x_pos);
+    Serial.print("   Y: ");
     Serial.println(shoulder_y_pos);
     delay(50);
     
